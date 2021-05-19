@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<form>
+    <label name="code"/>
+    <field name="code"/> 
+    <label name="purchase"/>
+    <field name="purchase"/>
+    <label name="party"/>
+    <field name="party"/>  
+    <label name="date"/>
+    <field name="date"/>
+    <label name="test_name"/>
+    <field name="test_name"/>
+    <label name="image"/>
+    <field name="image"/>
+    <label name="test_result"/>
+    <field name="test_result"/>
+    <label name="batch_qty"/>
+    <field name="batch_qty"/>
+    <label name="sample_qty"/>
+    <field name="sample_qty"/>
+    <label name="report_by"/>
+    <field name="report_by"/>         
+</form>

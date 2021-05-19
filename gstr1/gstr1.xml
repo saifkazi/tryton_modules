@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+        <record model="ir.action.report" id="report_model_gstr1">
+            <field name="name">GSTR1</field>
+            <field name="model">ir.model</field>
+            <field name="report_name">ir.model.gstr1</field>
+        </record>
+
+        <record model="ir.ui.view" id="create_gstr1_report_start_view_form">
+            <field name="model">gstr1.export.report</field>
+            <field name="type">form</field>
+            <field name="name">export_report</field>
+        </record>
+
+        <record model="ir.action.wizard" id="wizard_gstr1_report">
+            <field name="name">GSTR1 Report</field>
+            <field name="wiz_name">gstr1.create_report</field>
+        </record>
+
+        <menuitem parent="account.menu_account"
+            action="wizard_gstr1_report" id="menu_gstr1_report"
+            sequence="90"/>
+
+    </data>
+</tryton>
