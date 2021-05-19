@@ -22,13 +22,17 @@ class GSTR1EXCEL(Report):
     def execute(cls, ids, data):
         
         pool = Pool()
+        invoice = pool.get('account.invoice')
         date = pool.get('gstr1.export.report')
-        print("working "+str(date(0)))
+        # print("working "+ str(data['start_date'])) 
         Model = pool.get('ir.model')
         ActionReport = pool.get('ir.action.report')
         action_report_ids = ActionReport.search([
             ('report_name', '=', cls.__name__)
             ])
+
+        Account.search([])
+        
         if not action_report_ids:
             raise Exception('Error', 'Report (%s) not find!' % cls.__name__)
         action_report = ActionReport(action_report_ids[0])
@@ -112,6 +116,18 @@ class GSTR1Report(Wizard):
             ])  
     
     generate_report = StateAction('gstr1.report_model_gstr1')
+
+
+    def do_generate_report(self, action):
+        
+        from_date = self.start.from_date
+        to_date = self.start.to_date
+
+
+        return action , {
+            'start_date': self.start.from_date,
+            'end_date': self.start.to_date
+        }
 
 
 
